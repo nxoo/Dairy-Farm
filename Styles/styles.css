@@ -5,6 +5,9 @@ html, body {
 .container-fluid {
     display: flex;
 }
+.container {
+    padding: 6% 10% 0 3%;
+}
 .navbar {
     display: flex;
     flex-direction: column;
@@ -38,5 +41,10 @@ li a {
     font-size: xxx-large;
     font-weight: bold;
 }
-.mx ul li a {
+tr {
+}
+td {
+    margin: 0 !important;
+    padding: 20px;
+    border: 1px solid black;
 }
