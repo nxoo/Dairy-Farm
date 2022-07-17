@@ -1,0 +1,42 @@
+html, body {
+    padding: 0;
+    margin: 0;
+}
+.container-fluid {
+    display: flex;
+}
+.navbar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: baseline;
+    background-color: #615f5f;
+    height: 100vh;
+    padding: 0 8% 0 8%;
+}
+ul {
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+}
+li {
+    margin-block: 10px;
+}
+.navbar a:hover {
+    color: orange;
+}
+li a {
+    text-decoration: none;
+    font-size: xx-large;
+    font-weight: bold;
+    color: white;
+}
+.navbar-brand {
+    text-decoration: none;
+    color: white;
+    font-size: xxx-large;
+    font-weight: bold;
+}
+.mx ul li a {
+}
