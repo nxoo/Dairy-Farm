@@ -49,6 +49,9 @@ td {
     padding: 20px;
     border: 1px solid black;
 }
+#border-none {
+    border: none;
+}
 .week-navigator {
     display: flex;
     justify-content: space-between;
