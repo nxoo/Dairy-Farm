@@ -41,10 +41,22 @@ li a {
     font-size: xxx-large;
     font-weight: bold;
 }
-tr {
-}
 td {
-    margin: 0 !important;
+    margin: 0;
     padding: 20px;
     border: 1px solid black;
+}
+.week-navigator {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 576px) {
+    .container-fluid {
+        flex-direction: column;
+    }
+    .navbar {
+    }
 }
