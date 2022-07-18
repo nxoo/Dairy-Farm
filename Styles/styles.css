@@ -75,7 +75,7 @@ th {
         padding: 0;
     }
     .navbar {
-        padding: 1% 1% 1% 30%;
+        padding: 1% 1% 1% 15%;
         margin-bottom: 10%;
         justify-content: flex-start;
         align-items: baseline;
@@ -84,9 +84,13 @@ th {
     .sheds {
         overflow-x: auto;
     }
+    .navbar-brand {
+        font-size: xx-large;
+    }
     .nav-item .nav-link{
         font-size: x-large;
     }
-    td {
+    li {
+        margin-block: 2px;
     }
 }
