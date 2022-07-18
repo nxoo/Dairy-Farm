@@ -75,11 +75,15 @@ th {
         padding: 0;
     }
     .navbar {
-        padding: 1% 1% 1% 15%;
+        padding: 1%;
+        flex-direction: row;
         margin-bottom: 10%;
-        justify-content: flex-start;
+        justify-content: center;
         align-items: baseline;
         height: auto;
+    }
+    ul {
+        flex-direction: row;
     }
     .sheds {
         overflow-x: auto;
@@ -89,6 +93,7 @@ th {
     }
     .nav-item .nav-link{
         font-size: x-large;
+        margin: 10px;
     }
     li {
         margin-block: 2px;
