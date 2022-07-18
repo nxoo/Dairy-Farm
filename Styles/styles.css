@@ -46,17 +46,22 @@ li a {
 }
 td {
     margin: 0;
-    padding: 20px;
+    padding: 40px;
     border: 1px solid black;
+}
+th {
+    border: 1px solid black;
+    padding: 20px;
 }
 .week-navigator {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
-    margin-bottom: 25px;
+    margin: 25px 0 0 0;
 }
 .week-navigator button {
     padding: 8px;
+    margin-inline: 20px;
 }
 .sheds p {
     font-weight: bold;
