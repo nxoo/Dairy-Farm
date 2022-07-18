@@ -55,11 +55,30 @@ td {
     align-items: center;
     margin-bottom: 25px;
 }
+.week-navigator button {
+    padding: 8px;
+}
 
 @media (max-width: 576px) {
     .container-fluid {
         flex-direction: column;
     }
+    .container {
+        padding: 0;
+    }
     .navbar {
+        padding: 1% 1% 1% 30%;
+        margin-bottom: 10%;
+        justify-content: flex-start;
+        align-items: baseline;
+        height: auto;
+    }
+    .sheds {
+        overflow-x: auto;
+    }
+    .nav-item .nav-link{
+        font-size: x-large;
+    }
+    td {
     }
 }
