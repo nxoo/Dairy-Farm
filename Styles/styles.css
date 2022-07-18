@@ -58,6 +58,9 @@ td {
 .week-navigator button {
     padding: 8px;
 }
+.sheds p {
+    font-weight: bold;
+}
 
 @media (max-width: 576px) {
     .container-fluid {
