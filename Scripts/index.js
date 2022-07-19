@@ -1,4 +1,4 @@
-let week = 7 // week 1 = 7, week 2 = 14, week 3 = 21 etc ...
+let week = 0 // week 1 = 7, week 2 = 14, week 3 = 21 etc ...
 const data = {
     'shedOne': [], // shed one
     'shedTwo': []  // shed two
@@ -30,26 +30,27 @@ const randGen = () => {
         data.shedOne.push(a)
         data.shedTwo.push(b)
     }
+    console.log(data)
 }
 
 const fillShedOne = () => {
-    for (let x = 0; x < 7; x++) {
-        let td = document.getElementById(`shedOne${x}`)
+    for (let x = week; x < 7 + week; x++) {
+        let td = document.getElementById(`shedOne${x - week}`)
         td.innerHTML = data.shedOne[x]
     }
 }
 
 const fillShedTwo = () => {
-    for (let x = 0; x < 7; x++) {
-        let td = document.getElementById(`shedTwo${x}`)
+    for (let x = week; x < 7 + week; x++) {
+        let td = document.getElementById(`shedTwo${x - week}`)
         td.innerHTML = data.shedTwo[x]
     }
 }
 
 const fillShedTotal = () => {
-    for (let x = 0; x < 7; x++) {
+    for (let x = week; x < 7 + week; x++) {
         let total = data.shedOne[x] + data.shedTwo[x]
-        let td = document.getElementById(`total${x}`)
+        let td = document.getElementById(`total${x - week}`)
         td.innerHTML = total
     }
 }
@@ -60,16 +61,26 @@ const totalProduction = () => {
     fillShedOne()
     fillShedTwo()
     fillShedTotal()
-
-    /*
     let weekIndicator = document.getElementById('week')
     let next = document.getElementById('next')
     let previous = document.getElementById('previous')
     weekIndicator.innerHTML = `Week ${week / 7}`
     next.onclick = () => {
-        alert(week)
         week += 7
-    }*/
+        fillShedOne()
+        fillShedTwo()
+        fillShedTotal()
+        weekIndicator.innerHTML = `Week ${week / 7}`
+    }
+    previous.onclick = () => {
+        if (week > 0) {
+            week -= 7
+            fillShedOne()
+            fillShedTwo()
+            fillShedTotal()
+            weekIndicator.innerHTML = `Week ${week / 7}`
+        }
+    }
 }
 
 totalProduction()
