@@ -10,6 +10,7 @@
 </head>
 <body>
 <div class="container-fluid">
+
     <nav class="navbar">
         <a href="#" class="navbar-brand ms">KCC</a>
         <ul class="mx">
@@ -26,7 +27,9 @@
             </li>
         </ul>
     </nav>
+
     <div class="container">
+
         <div class="sheds">
             <table>
                 <tr>
@@ -41,24 +44,29 @@
                 </tr>
                 <tr id="shedOne">
                     <th nowrap>Shed One</th>
+                    <!-- td to be filled with js -->
                 </tr>
                 <tr id="shedTwo">
                     <th nowrap="">Shed Two</th>
+                    <!-- td to be filled with js -->
                 </tr>
                 <tr id="total">
                     <th>Total</th>
+                    <!-- td to be filled with js -->
                 </tr>
             </table>
         </div>
+
         <div class="week-navigator">
-            <button>Previous</button>
-            Week 1
-            <button>Next</button>
+            <button id="previous">Previous</button>
+            <span id="week"></span>
+            <button id="next">Next</button>
         </div>
+
         <p>Milk production in Litres</p>
     </div>
-</div>
 
+</div>
 <script src="Scripts/index.js"></script>
 </body>
 </html>
