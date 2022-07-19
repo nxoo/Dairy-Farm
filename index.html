@@ -15,10 +15,10 @@
         <a href="#" class="navbar-brand ms">KCC</a>
         <ul class="mx">
             <li class="nav-item">
-                <a href="#" id="shedBtn" class="nav-link">Sheds</a>
+                <a href="#"  class="nav-link" id="sheds-nav">Sheds</a>
             </li>
             <li class="nav-item">
-                <a href="#" class="nav-link">Forecast</a>
+                <a href="#" class="nav-link" id="forecasts-nav">Forecast</a>
             </li>
         </ul>
         <ul class="me">
@@ -30,40 +30,48 @@
 
     <div class="container">
 
-        <div class="sheds">
-            <table>
-                <tr>
-                    <th></th>
-                    <th>Mon</th>
-                    <th>Tue</th>
-                    <th>Wed</th>
-                    <th>Thur</th>
-                    <th>Fri</th>
-                    <th>Sat</th>
-                    <th>Sun</th>
-                </tr>
-                <tr id="shedOne">
-                    <th nowrap>Shed One</th>
-                    <!-- td to be filled with js -->
-                </tr>
-                <tr id="shedTwo">
-                    <th nowrap="">Shed Two</th>
-                    <!-- td to be filled with js -->
-                </tr>
-                <tr id="total">
-                    <th>Total</th>
-                    <!-- td to be filled with js -->
-                </tr>
-            </table>
+        <div id="sheds-container">
+            <div class="sheds">
+                <table>
+                    <tr>
+                        <th></th>
+                        <th>Mon</th>
+                        <th>Tue</th>
+                        <th>Wed</th>
+                        <th>Thur</th>
+                        <th>Fri</th>
+                        <th>Sat</th>
+                        <th>Sun</th>
+                    </tr>
+                    <tr id="shedOne">
+                        <th nowrap>Shed One</th>
+                        <!-- td to be filled with js -->
+                    </tr>
+                    <tr id="shedTwo">
+                        <th nowrap="">Shed Two</th>
+                        <!-- td to be filled with js -->
+                    </tr>
+                    <tr id="total">
+                        <th nowrap>Total Liters</th>
+                        <!-- td to be filled with js -->
+                    </tr>
+                    <tr id="earnings">
+                        <th nowrap>
+                        <span>Earnings</span><br>
+                        <small>45ksh / litre</small>
+                        </th>
+                        <!-- td to be filled with js -->
+                    </tr>
+                </table>
+            </div>
+
+            <div class="week-navigator">
+                <button id="previous">Previous</button>
+                <span id="week"></span>
+                <button id="next">Next</button>
+            </div>
         </div>
 
-        <div class="week-navigator">
-            <button id="previous">Previous</button>
-            <span id="week"></span>
-            <button id="next">Next</button>
-        </div>
-
-        <p>Milk production in Litres</p>
     </div>
 
 </div>

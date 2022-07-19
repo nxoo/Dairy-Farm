@@ -1,7 +1,8 @@
 let week = 0 // week 1 = 7, week 2 = 14, week 3 = 21 etc ...
 const data = {
     'shedOne': [], // shed one
-    'shedTwo': []  // shed two
+    'shedTwo': [],  // shed two
+    'earnings': []
 }
 
 // create table
@@ -9,16 +10,20 @@ function createTable() {
     let tr1 = document.getElementById('shedOne')
     let tr2 = document.getElementById('shedTwo')
     let tr3 = document.getElementById('total')
+    let tr4 = document.getElementById('earnings')
     for (let x = 0; x < 7; x++) {
         let td1 = document.createElement('td')
         let td2 = document.createElement('td')
         let td3 = document.createElement('td')
+        let td4 = document.createElement('td')
         td1.setAttribute('id', `shedOne${x}`)
         td2.setAttribute('id', `shedTwo${x}`)
         td3.setAttribute('id', `total${x}`)
+        td4.setAttribute('id', `earnings${x}`)
         tr1.appendChild(td1)
         tr2.appendChild(td2)
         tr3.appendChild(td3)
+        tr4.appendChild(td4)
     }
 }
 
@@ -29,6 +34,7 @@ const randGen = () => {
         let b = Math.floor(Math.random() * (15 - 10) + 10);
         data.shedOne.push(a)
         data.shedTwo.push(b)
+        data.earnings.push((a + b) * 45)
     }
     console.log(data)
 }
@@ -47,11 +53,19 @@ const fillShedTwo = () => {
     }
 }
 
-const fillShedTotal = () => {
+const fillTotal = () => {
     for (let x = week; x < 7 + week; x++) {
         let total = data.shedOne[x] + data.shedTwo[x]
         let td = document.getElementById(`total${x - week}`)
         td.innerHTML = total
+    }
+}
+
+const fillEarnings = () => {
+    for (let x = week; x < 7 + week; x++) {
+        let total = data.shedOne[x] + data.shedTwo[x]
+        let td = document.getElementById(`earnings${x - week}`)
+        td.innerHTML = data.earnings[x]
     }
 }
 
@@ -60,7 +74,8 @@ const totalProduction = () => {
     createTable()
     fillShedOne()
     fillShedTwo()
-    fillShedTotal()
+    fillTotal()
+    fillEarnings()
     let weekIndicator = document.getElementById('week')
     let next = document.getElementById('next')
     let previous = document.getElementById('previous')
@@ -70,7 +85,9 @@ const totalProduction = () => {
             week += 7
             fillShedOne()
             fillShedTwo()
-            fillShedTotal()
+            fillTotal()
+            fillEarnings()
+            let weekIndicator = document.getElementById('week')
             weekIndicator.innerHTML = `Week ${(week / 7)+1}`
         }
     }
@@ -79,10 +96,23 @@ const totalProduction = () => {
             week -= 7
             fillShedOne()
             fillShedTwo()
-            fillShedTotal()
+            fillTotal()
+            fillEarnings()
+            let weekIndicator = document.getElementById('week')
             weekIndicator.innerHTML = `Week ${(week / 7)+1}`
         }
     }
 }
 
 totalProduction()
+
+let forecastsNav = document.getElementById('forecasts-nav')
+let shedsNav = document.getElementById('sheds-nav')
+
+forecastsNav.onclick = () => {
+    let sheds = document.getElementById('sheds-container')
+    sheds.setAttribute('className', 'hide')
+}
+shedsNav.onclick = () => {
+    let sheds = document.getElementById('sheds-container')
+}
