@@ -63,7 +63,6 @@ const fillTotal = () => {
 
 const fillEarnings = () => {
     for (let x = week; x < 7 + week; x++) {
-        let total = data.shedOne[x] + data.shedTwo[x]
         let td = document.getElementById(`earnings${x - week}`)
         td.innerHTML = data.earnings[x]
     }
@@ -105,14 +104,3 @@ const totalProduction = () => {
 }
 
 totalProduction()
-
-let forecastsNav = document.getElementById('forecasts-nav')
-let shedsNav = document.getElementById('sheds-nav')
-
-forecastsNav.onclick = () => {
-    let sheds = document.getElementById('sheds-container')
-    sheds.setAttribute('className', 'hide')
-}
-shedsNav.onclick = () => {
-    let sheds = document.getElementById('sheds-container')
-}
