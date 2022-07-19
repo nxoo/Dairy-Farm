@@ -18,29 +18,41 @@ randGen()
 console.log(data)
 
 const fillShedOne = () => {
-    const shedOne = document.getElementById("shedOne")
+    const tr = document.getElementById("shedOne")
     data.one.forEach(x => {
         let td = document.createElement('td')
         let tdValue = document.createTextNode(x)
         td.appendChild(tdValue)
-        shedOne.appendChild(td)
+        tr.appendChild(td)
     })
 }
 
 const fillShedTwo = () => {
-    const shedTwo = document.getElementById("shedTwo")
+    const tr = document.getElementById("shedTwo")
     data.two.forEach(x => {
         let td = document.createElement('td')
         let tdValue = document.createTextNode(x)
         td.appendChild(tdValue)
-        shedTwo.appendChild(td)
+        tr.appendChild(td)
     })
+}
+
+const fillShedTotal = () => {
+    const tr = document.getElementById('total')
+    for (let x=0; x<7; x++) {
+        let total = data.one[x] + data.two[x]
+        let td = document.createElement('td')
+        let tdValue = document.createTextNode(total)
+        td.appendChild(tdValue)
+        tr.appendChild(td)
+    }
 }
 
 
 const totalProduction  = () => {
     fillShedOne()
     fillShedTwo()
+    fillShedTotal()
 }
 
 totalProduction()
