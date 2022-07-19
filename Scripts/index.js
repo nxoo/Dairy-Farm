@@ -7,7 +7,7 @@ const data = {
 
 // function to generate array with 366 (representing days) random values with values between 10 & 15
 const randGen = () => {
-    for (let i = 0; i < 366; i++) {
+    for (let i = 0; i < 7; i++) {
         let a = Math.floor(Math.random() * (15 - 10) + 10);
         let b = Math.floor(Math.random() * (15 - 10) + 10);
         data.one.push(a)
