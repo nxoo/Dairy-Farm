@@ -64,13 +64,15 @@ const totalProduction = () => {
     let weekIndicator = document.getElementById('week')
     let next = document.getElementById('next')
     let previous = document.getElementById('previous')
-    weekIndicator.innerHTML = `Week ${week / 7}`
+    weekIndicator.innerHTML = `Week ${(week / 7)+1}`
     next.onclick = () => {
-        week += 7
-        fillShedOne()
-        fillShedTwo()
-        fillShedTotal()
-        weekIndicator.innerHTML = `Week ${week / 7}`
+        if (week < (51*7)) {
+            week += 7
+            fillShedOne()
+            fillShedTwo()
+            fillShedTotal()
+            weekIndicator.innerHTML = `Week ${(week / 7)+1}`
+        }
     }
     previous.onclick = () => {
         if (week > 0) {
@@ -78,7 +80,7 @@ const totalProduction = () => {
             fillShedOne()
             fillShedTwo()
             fillShedTotal()
-            weekIndicator.innerHTML = `Week ${week / 7}`
+            weekIndicator.innerHTML = `Week ${(week / 7)+1}`
         }
     }
 }
