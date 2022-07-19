@@ -101,7 +101,7 @@ const totalProduction = () => {
     next.onclick = () => {
         if (week < (51*7)) {
             week += 7
-            month += 0.235
+            month += 0.25
             fillShedOne()
             fillShedTwo()
             fillTotal()
@@ -116,7 +116,7 @@ const totalProduction = () => {
     previous.onclick = () => {
         if (week > 0) {
             week -= 7
-            month -= 0.235
+            month -= 0.25
             fillShedOne()
             fillShedTwo()
             fillTotal()
