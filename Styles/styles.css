@@ -82,7 +82,7 @@ th {
         padding: 1%;
         flex-direction: row;
         margin-bottom: 10%;
-        justify-content: center;
+        justify-content: space-around;
         align-items: baseline;
         height: auto;
     }
