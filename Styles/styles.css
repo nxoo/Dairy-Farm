@@ -67,6 +67,10 @@ th {
     font-weight: bold;
 }
 
+.hide {
+    display: none;
+}
+
 @media (max-width: 576px) {
     .container-fluid {
         flex-direction: column;
