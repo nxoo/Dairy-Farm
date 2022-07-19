@@ -1,8 +1,12 @@
-let week = 0 // week 1 = 7, week 2 = 14, week 3 = 21 etc ...
+let week = 0;
+let month = 0;
 const data = {
     'shedOne': [], // shed one
     'shedTwo': [],  // shed two
-    'earnings': []
+    'earnings': [], // total shed production
+    'monthEarnings': [],
+    'months': ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+
 }
 
 // create table
@@ -68,6 +72,18 @@ const fillEarnings = () => {
     }
 }
 
+const monthReport = () => {
+    let monthTotal = 0;
+    for (let x=0; x<366; x++) {
+        if (x % 30 === 0 && x > 0) {
+            data.monthEarnings.push(monthTotal)
+            monthTotal = 0;
+        } else {
+            monthTotal += data.earnings[x]
+        }
+    }
+}
+
 const totalProduction = () => {
     randGen()
     createTable()
@@ -75,30 +91,41 @@ const totalProduction = () => {
     fillShedTwo()
     fillTotal()
     fillEarnings()
+    monthReport()
     let weekIndicator = document.getElementById('week')
     let next = document.getElementById('next')
     let previous = document.getElementById('previous')
     weekIndicator.innerHTML = `Week ${(week / 7)+1}`
+    let mReport = document.getElementById('month-report')
+    mReport.innerHTML = `Your income for ${data.months[month]} is ${data.monthEarnings[month]}`
     next.onclick = () => {
         if (week < (51*7)) {
             week += 7
+            month += 0.235
             fillShedOne()
             fillShedTwo()
             fillTotal()
             fillEarnings()
             let weekIndicator = document.getElementById('week')
             weekIndicator.innerHTML = `Week ${(week / 7)+1}`
+            let mReport = document.getElementById('month-report')
+            mReport.innerHTML = `Your income for ${data.months[Math.floor(month)]} is
+             ${data.monthEarnings[Math.floor(month)]}`
         }
     }
     previous.onclick = () => {
         if (week > 0) {
             week -= 7
+            month -= 0.235
             fillShedOne()
             fillShedTwo()
             fillTotal()
             fillEarnings()
             let weekIndicator = document.getElementById('week')
             weekIndicator.innerHTML = `Week ${(week / 7)+1}`
+            let mReport = document.getElementById('month-report')
+            mReport.innerHTML = `Your income for ${data.months[Math.floor(month)]} 
+            is ${data.monthEarnings[Math.floor(month)]}`
         }
     }
 }
