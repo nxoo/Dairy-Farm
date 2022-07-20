@@ -97,7 +97,7 @@ const totalProduction = () => {
     let previous = document.getElementById('previous')
     weekIndicator.innerHTML = `Week ${(week / 7)+1}`
     let mReport = document.getElementById('month-report')
-    mReport.innerHTML = `Your income for ${data.months[month]} is ${data.monthEarnings[month]}`
+    mReport.innerHTML = `Your income for ${data.months[month]} is KES ${data.monthEarnings[month]}`
     next.onclick = () => {
         if (week < (51*7)) {
             week += 7
@@ -109,7 +109,7 @@ const totalProduction = () => {
             let weekIndicator = document.getElementById('week')
             weekIndicator.innerHTML = `Week ${(week / 7)+1}`
             let mReport = document.getElementById('month-report')
-            mReport.innerHTML = `Your income for ${data.months[Math.floor(month)]} is
+            mReport.innerHTML = `Your income for ${data.months[Math.floor(month)]} is KES
              ${data.monthEarnings[Math.floor(month)]}`
         }
     }
@@ -124,8 +124,8 @@ const totalProduction = () => {
             let weekIndicator = document.getElementById('week')
             weekIndicator.innerHTML = `Week ${(week / 7)+1}`
             let mReport = document.getElementById('month-report')
-            mReport.innerHTML = `Your income for ${data.months[Math.floor(month)]} 
-            is ${data.monthEarnings[Math.floor(month)]}`
+            mReport.innerHTML = `Your income for ${data.months[Math.floor(month)]}
+            is KES ${data.monthEarnings[Math.floor(month)]}`
         }
     }
 }
